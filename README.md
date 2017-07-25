@@ -1,24 +1,15 @@
-# README
+# Family pharma
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version                       2.3.1
 
-Things you may want to cover:
+* Rails version                      5.0.4
 
-* Ruby version
+* System dependencies                Normal
 
-* System dependencies
+* Configuration                      Normal
 
-* Configuration
-
-* Database creation
+* Database creation                  SQLite3
 
 * Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* How to run the test suite          $rails test
