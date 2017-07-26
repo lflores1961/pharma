@@ -1,15 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  tittle: MyString
+  tittle: Tittle 1
   description: MyText
-  image_url: MyString
+  image_url: MyString.jpg
   laboratory: MyString
   price: 9.99
 
 two:
-  tittle: MyString
+  tittle: Tittle 2
   description: MyText
-  image_url: MyString
+  image_url: MyString.png
   laboratory: MyString
   price: 9.99
+
+complan:
+  tittle: Complan
+  description:
+    es un alimento equilibrado y completo, adicionado con 25 Vitaminas y Minerales, 
+    que dentro de una alimentación y estilo de vida saludables ayuda a que el cuerpo 
+    realice sus funciones cotidianas.
+  image_url: Complan-leveled.png
+  laboratory: NutriO
+  price: 178.30
