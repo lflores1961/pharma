@@ -12,31 +12,46 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :tittle %>
+    <%= f.label :tittle, "Producto" %>
     <%= f.text_field :tittle %>
   </div>
 
   <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description, rows: 10, cols: 60 %>
+    <%= f.label :description, 'Descripción' %>
+    <%= f.text_area :description, rows: 3, cols: 40 %>
   </div>
 
   <div class="field">
-    <%= f.label :image_url %>
+    <%= f.label :presentation, 'Presentación' %>
+    <%= f.text_area :presentation, rows: 4, cols: 40 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :indication, 'Indicaciones' %>
+    <%= f.text_area :indication, rows: 4, cols: 40 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :properties, 'Propiedades' %>
+    <%= f.text_area :properties, rows: 4, cols: 40 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image_url, 'Imagen' %>
     <%= f.text_field :image_url %>
   </div>
 
   <div class="field">
-    <%= f.label :laboratory %>
+    <%= f.label :laboratory, 'Laboratorio' %>
     <%= f.text_field :laboratory %>
   </div>
 
   <div class="field">
-    <%= f.label :price %>
+    <%= f.label :price, 'Precio al público' %>
     <%= f.text_field :price %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Agregar producto' %>
   </div>
 <% end %>
