@@ -33,6 +33,13 @@
       color: #598000;
     }
 
+    h4 {
+      font-family: sans-serif;
+      margin-top: 0;
+      margin-bottom: 2px;
+      color: #ed8800;
+    }
+
     .description {
       margin-left: 100px;
     }
@@ -41,6 +48,10 @@
       margin-left: 100px;
       margin-top: 0.5em;
       margin-bottom: 0.8em;
+
+      form, div {
+        display: inline;
+      }
     }
 
     .price {
