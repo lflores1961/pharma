@@ -1,0 +1,7 @@
+if ($('#cart tr').length == 1) { $('#cart').show('blind', 1000); }
+
+$('#cart').html("<%=j render(@cart) %>");
+$('#notice').html("");
+
+$('#current_item').css({'background-color':'#ffff4d'}).
+  animate({'background-color':'#ffdeb3'}, 1000);
