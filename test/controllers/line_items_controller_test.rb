@@ -37,8 +37,10 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update line_item" do
-    patch line_item_url(@line_item), params: { line_item: { product_id: @line_item.product_id } }
-    assert_redirected_to line_item_url(@line_item)
+    patch line_item_url(@line_item), params: { line_item: { product_id: @line_item.product_id,
+                                                            price: @line_item.price  } }
+    assert_response :success
+    #assert_redirected_to line_item_url(@line_item)
   end
 
   test "should destroy line_item" do
@@ -46,7 +48,7 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
       delete line_item_url(@line_item)
     end
 
-    assert_redirected_to line_items_url
+    assert_redirected_to store_index_path
   end
 
   test "should create line_item via Ajax" do
