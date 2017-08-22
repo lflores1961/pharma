@@ -1,0 +1,24 @@
+<h2>Producto: <%=@product.tittle %></h2>
+<% @product.orders.each do |order| %>
+  <h3>Orden <%= order.id %></h3>
+  <p>Enviado a <%= order.address %></p>
+  <table>
+    <tr>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+    </tr>
+    <% order.line_items.each do |item| %>
+      <tr>
+        <td><%= item.product.tittle %></td>
+        <td><%= item.quantity %></td>
+        <td><%= number_to_currency item.total_price %></td>
+      </tr>
+    <% end %>
+    <tr>
+      <th colspan="2">Total</th>
+      <th><%= number_to_currency order.line_items.map(&:total_price).sum %></th>
+    </tr>
+  </table>
+  <p>Pagado con <%= order.pay_type %></p>
+<% end %>
