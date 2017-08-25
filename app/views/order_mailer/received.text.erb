@@ -1,0 +1,9 @@
+Estimado <%= @order.name %>,
+
+Gracias por su reciente compra a Farmacia Zi.
+
+Usted ordenó los siguientes productos:
+
+<%= render @order.line_items %>
+
+Le enviaremos un correo en cuanto se haga el envío de sus productos.

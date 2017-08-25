@@ -1,0 +1,4 @@
+<%= sprintf("%2d x %35s = %8.2f",
+              line_item.quantity,
+              truncate(line_item.product.tittle, length: 50),
+              line_item.total_price) %>

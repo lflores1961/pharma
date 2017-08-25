@@ -1,0 +1,14 @@
+<h2>Farmacia Zi</h2>
+
+<h3>Estimado <%= @order.name %></h3>
+
+<p>
+  Gracias por su reciente compra a Farmacia Zi, usted ordenó los siguientes artículos:
+</p>
+
+<table>
+  <tr>
+    <th>Cant.</th><th>Descripción</th>
+  </tr>
+  <%= render 'line_items/mail_line_items' %>
+</table>
