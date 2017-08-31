@@ -58,12 +58,12 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_caching = true
   config.action_mailer.smtp_settings = {
-    address:              "smtp.gmail.com",
+    address:              "smtp.sendgrid.net",
     port:                 587,
-    domain:               "gmail.com",
+    domain:               "heroku.com",
     authentication:       "plain",
-    user_name:            "fernando.flores1961@gmail.com",
-    password:             "kravMaga%2012",
+    user_name:            ENV['SENDGRID_USERNAME'],
+    password:             ENV['SENDGRID_PASSWORD'],
     enable_starttls_auto: true
   }
 
