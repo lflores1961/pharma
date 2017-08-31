@@ -1,4 +1,5 @@
 class Order < ApplicationRecord
+  before_update :send_ship_mail
   has_many :line_items, dependent: :destroy
   enum pay_type: {
     "Cheque"              => 0,
@@ -18,4 +19,15 @@ class Order < ApplicationRecord
       line_items << item
     end
   end
+
+  def total_price
+    line_items.to_a.sum { |item| item.total_price}
+  end
+
+  def send_ship_mail
+    if self.changed.include?("ship_date")
+      OrderMailer.shipped(self).deliver_later
+    end
+  end
+
 end

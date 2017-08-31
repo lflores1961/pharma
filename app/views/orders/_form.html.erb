@@ -34,6 +34,11 @@
                   prompt: 'Seleccione un método de pago' %>
   </div>
 
+  <div class="field">
+    <%= f.label :ship_date %>
+    <%= f.date_field :ship_date  %>
+  </div>
+  
   <div class="actions">
     <%= f.submit 'Enviar orden' %>
   </div>

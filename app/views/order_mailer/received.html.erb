@@ -11,4 +11,8 @@
     <th>Cant.</th><th>Descripción</th>
   </tr>
   <%= render 'line_items/mail_line_items' %>
+  <tr>
+    <th colspan="2">Total:</th>
+    <th><%= number_to_currency(@order.total_price) %></th>
+  </tr>
 </table>

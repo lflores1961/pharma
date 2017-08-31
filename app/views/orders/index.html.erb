@@ -1,14 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Orders</h1>
+<h1>Listado de Ordenes</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Address</th>
+      <th>Nombre</th>
+      <th>Dirección</th>
       <th>Email</th>
-      <th>Pay type</th>
+      <th>Pago</th>
+      <th>Envío</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +21,11 @@
         <td><%= order.address %></td>
         <td><%= order.email %></td>
         <td><%= order.pay_type %></td>
+        <% if order.ship_date %>
+          <td><%= order.ship_date.to_date %></td>
+        <% else %>
+          <td> No enviado </td>
+        <% end %>
         <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
         <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: '¿Seguro?' } %></td>

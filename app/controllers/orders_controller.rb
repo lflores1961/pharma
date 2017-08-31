@@ -47,6 +47,7 @@ class OrdersController < ApplicationController
   # PATCH/PUT /orders/1
   # PATCH/PUT /orders/1.json
   def update
+
     respond_to do |format|
       if @order.update(order_params)
         format.html { redirect_to @order, notice: 'Se actualizó exitosamente su orden.' }
@@ -76,7 +77,7 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:name, :address, :email, :pay_type)
+      params.require(:order).permit(:name, :address, :email, :pay_type, :ship_date)
     end
 
     def ensure_cart_isnt_empty

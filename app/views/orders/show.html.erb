@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre:</strong>
   <%= @order.name %>
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong>Dirección:</strong>
   <%= @order.address %>
 </p>
 
@@ -16,8 +16,17 @@
 </p>
 
 <p>
-  <strong>Pay type:</strong>
+  <strong>Tipo de pago:</strong>
   <%= @order.pay_type %>
+</p>
+
+<p>
+  <strong>Fecha de Envío:</strong>
+  <% if @order.ship_date %>
+    <%= @order.ship_date %>
+  <% else %>
+    No enviado
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_order_path(@order) %> |

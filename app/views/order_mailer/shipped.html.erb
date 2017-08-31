@@ -3,7 +3,7 @@
 <h3>Estimado <%= @order.name %></h3>
 
 <p>
-  Su orden ha sido enviada con los siguientes artículos:
+  Su orden ha sido enviada con fecha: <%= @order.ship_date.to_date %>, incluyendo los siguientes artículos:
 </p>
 
 <table>
@@ -11,4 +11,8 @@
     <th>Cant.</th><th>Descripción</th>
   </tr>
   <%= render 'line_items/mail_line_items' %>
+  <tr>
+    <th colspan="2">Total:</th>
+    <th><%= number_to_currency(@order.total_price) %></th>
+  </tr>
 </table>
