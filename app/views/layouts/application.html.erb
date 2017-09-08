@@ -25,11 +25,24 @@
         </div>
 
         <ul>
-          <li><a href="#">Inicio</a></li>
+          <li><%= link_to 'Inicio', store_index_path %></li>
           <li><a href="#">Preguntas frecuentes</a></li>
           <li><a href="#">Noticias</a></li>
           <li><a href="#">Contacto</a></li>
         </ul>
+
+        <% if session[:user_id] %>
+          <p><%= User.find(session[:user_id]).email %></p>
+          <ul>
+            <li><%= link_to 'Ordenes',    orders_path   %></li>
+            <li><%= link_to 'Productos',  products_path %></li>
+            <li><%= link_to 'Usuarios',   users_path    %></li>
+          </ul>
+          <%= button_to 'Terminar sesión', logout_path, method: :delete %>
+        <% else %>
+          <%= button_to 'Iniciar sesión', login_path %>
+        <% end %>
+
       </div>
       <div id="main">
         <%= yield %>

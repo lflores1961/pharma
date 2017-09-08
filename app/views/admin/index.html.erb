@@ -1,0 +1,6 @@
+<h1>Bienvenido <%= @user.name %></h1>
+
+<p>
+  Son las <%= Time.now %>
+    Tenemos <%= pluralize(@total_orders, 'Orden') %>
+</p>
