@@ -46,3 +46,8 @@ Product.create( tittle:                   'Fresubin Plus (Hipercalórica)',
                 presentation:             "Lata de 236ml 350kcal (1.5kcal/ml).Sabores: Fresa, Vainilla y Chocolate. Hidratos de Carbono: 49.26g  (56.3%). Proteínas: 12.86g (14.7%).Lípidos: 11.28g(29%)Reducido en sodio (170 mg). Sodio 139.4 mg . Potasio 328.6 mg",
                 indication:               "Ideal para: Altos requerimientos de energía. Desnutrición Pérdida de peso Anorexia Geriatría Pre y post cirugía Cardiopatías .Problemas gastrointestinales. Puede consumir de 1 a 2.5 latas o de acuerdo a la prescripción médica. Vía de alimentación oral o por sonda.No para uso parenteral.",
                 properties:               "Fórmula polimérica hipercalórica.Bajo en sodio, libre de lactosa, gluten y colesterol")
+
+User.create(  name:                        'Luis Fernando Flores Oviedo',
+              email:                        'fernando.flores1961@gmail.com',
+              password:                     'foobar',
+              password_confirmation:        'foobar')
