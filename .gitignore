@@ -19,3 +19,9 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Ignore third party API keys
+/config/third_party.yml
+
+# Ignore uploaded test images
+/public/uploads

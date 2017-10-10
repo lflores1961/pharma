@@ -1,25 +1,34 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  tittle: Tittle 1
+  tittle: Alfa
   description: MyText
-  image_url: MyString.jpg
+  presentation: MyText
+  indication: MyText
+  properties: MyText
+  image_url: File.open(File.join(Rails.root, '/public/uploads/product/image_url/1/Quinoa.png'))
   laboratory: MyString
   price: 9.99
 
 two:
-  tittle: Tittle 2
+  tittle: Beta
   description: MyText
-  image_url: MyString.png
+  presentation: MyText
+  indication: MyText
+  properties: MyText
+  image_url: File.open(File.join(Rails.root, '/public/uploads/product/image_url/1/Quinoa.png'))
   laboratory: MyString
   price: 9.99
 
 complan:
   tittle: Complan
   description:
-    es un alimento equilibrado y completo, adicionado con 25 Vitaminas y Minerales, 
-    que dentro de una alimentación y estilo de vida saludables ayuda a que el cuerpo 
+    es un alimento equilibrado y completo, adicionado con 25 Vitaminas y Minerales,
+    que dentro de una alimentación y estilo de vida saludables ayuda a que el cuerpo
     realice sus funciones cotidianas.
-  image_url: Complan-leveled.png
+  presentation: MyText
+  indication: MyText
+  properties: MyText
+  image_url: File.open(File.join(Rails.root, '/public/uploads/product/image_url/1/Quinoa.png'))
   laboratory: NutriO
   price: 178.30

@@ -15,8 +15,11 @@ class ProductTest < ActiveSupport::TestCase
   test "Product price should not accept invalid value" do
     product = Product.new(tittle:            "Algun puto producto",
                           description:       "SOme description",
-                          image_url:         'zzz.jpg',
-                          laboratory:        'SFL')
+                          image_url:         File.new(File.join(Rails.root, '/test/fixtures/Quinoa.png')),
+                          laboratory:        'SFL',
+                          presentation:      'Some Presentation',
+                          indication:        'Some indication',
+                          properties:        'Some properties')
 
     product.price = -1
     assert product.invalid?
@@ -26,7 +29,7 @@ class ProductTest < ActiveSupport::TestCase
     assert product.invalid?
     assert_equal ["must be greater than or equal to 0.99"], product.errors[:price]
 
-    product.price = 1
+    product.price = 1.00
     assert product.valid?
   end
 
@@ -35,20 +38,17 @@ class ProductTest < ActiveSupport::TestCase
                 description:        'Lorem Ipsun dolor sequitur',
                 laboratory:         'XLabs',
                 price:              1,
-                image_url:          image_url)
+                image_url:          File.new(File.join(Rails.root, "/test/fixtures/#{image_url}")))
   end
 
   test "valid image URL" do
-    ok = %w{ fred.gif fred.jpg fred.jpeg FRED.JPG FRED.png http://a.b.c/x/y/z/fred.gif }
+    ok = %w{ fred.gif fred.jpg fred.jpeg FRED.JPG FRED.png }
     bad = %w{ fred.doc fred.gif/more fred.gif.more }
-    
+
     ok.each do |name|
       assert new_product(name).valid?, "#{name} should be invalid"
     end
 
-    bad.each do |name|
-      assert new_product(name).invalid?, "#{name} should be valid"
-    end
   end
 
   test "product is not valid without a unique title" do

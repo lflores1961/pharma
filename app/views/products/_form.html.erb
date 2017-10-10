@@ -1,57 +1,72 @@
-<%= form_for(product) do |f| %>
-  <% if product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+<div class="depot_form">
+  <%= form_for(product) do |f| %>
+    <% if product.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
 
-      <ul>
-      <% product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+        <ul>
+        <% product.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <fieldset>
+      <legend>Introduzca los detalles del producto.</legend>
+      <div class="field">
+        <%= f.label :tittle, "Producto" %>
+        <%= f.text_field :tittle %>
+      </div>
+
+      <div class="field">
+        <%= f.label :description, 'Descripción' %>
+        <%= f.text_area :description, rows: 3, cols: 40 %>
+      </div>
+
+      <div class="field">
+        <%= f.label :presentation, 'Presentación' %>
+        <%= f.text_area :presentation, rows: 4, cols: 40 %>
+      </div>
+
+      <div class="field">
+        <%= f.label :indication, 'Indicaciones' %>
+        <%= f.text_area :indication, rows: 4, cols: 40 %>
+      </div>
+
+      <div class="field">
+        <%= f.label :properties, 'Propiedades' %>
+        <%= f.text_area :properties, rows: 4, cols: 40 %>
+      </div>
+
+      <div class="field">
+        <%= f.label :image_url, 'Imagen' %>
+        <%= f.file_field :image_url, accept: 'image/jpeg,image/gif,image/png' %>
+      </div>
+
+      <div class="field">
+        <%= f.label :laboratory, 'Laboratorio' %>
+        <%= f.text_field :laboratory %>
+      </div>
+
+      <div class="field">
+        <%= f.label :price, 'Precio al público' %>
+        <%= f.text_field :price %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit 'Agregar producto' %>
+      </div>
+    </fieldset>
+
   <% end %>
+</div>
 
-  <div class="field">
-    <%= f.label :tittle, "Producto" %>
-    <%= f.text_field :tittle %>
-  </div>
-
-  <div class="field">
-    <%= f.label :description, 'Descripción' %>
-    <%= f.text_area :description, rows: 3, cols: 40 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :presentation, 'Presentación' %>
-    <%= f.text_area :presentation, rows: 4, cols: 40 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :indication, 'Indicaciones' %>
-    <%= f.text_area :indication, rows: 4, cols: 40 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :properties, 'Propiedades' %>
-    <%= f.text_area :properties, rows: 4, cols: 40 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :image_url, 'Imagen' %>
-    <%= f.text_field :image_url %>
-  </div>
-
-  <div class="field">
-    <%= f.label :laboratory, 'Laboratorio' %>
-    <%= f.text_field :laboratory %>
-  </div>
-
-  <div class="field">
-    <%= f.label :price, 'Precio al público' %>
-    <%= f.text_field :price %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit 'Agregar producto' %>
-  </div>
-<% end %>
+<script type="text/javascript">
+  $('#product_image_url').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Tamaño máximo permitido es 5MB, seleccione un archivo menor.');
+    }
+  });
+</script>

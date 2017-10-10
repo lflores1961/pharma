@@ -1,0 +1,9 @@
+<li id="post-<%= post.id %>">
+  <span class="content">
+    <%= image_tag post.picture.url if post.picture? %>
+    <%= post.content %>
+  </span>
+  <span class="timestamp">
+    Publicado: <%= post.created_at %>
+  </span>
+</li>

@@ -1,0 +1,52 @@
+<div class="depot_form">
+  <%= form_for(post) do |f| %>
+    <% if post.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+        <ul>
+        <% post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <fieldset>
+      <legend>Introduzca el contenido del artículo</legend>
+      <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title, size: "30" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :tipo_post %>
+        <%= f.text_field :tipo_post %>
+      </div>
+
+      <div class="field">
+        <%= f.label :content %>
+        <%= f.text_area :content, cols: "30", rows: "12" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :picture %>
+        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    </fieldset>
+
+  <% end %>
+</div>
+
+<script type="text/javascript">
+  $('#post_picture').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('El tamaño máximo de la imagen es de 5MB, por favor seleccione una imagen más pequeña.')
+    }
+  });
+</script>

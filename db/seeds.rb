@@ -5,9 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Product.create( tittle:                   'Quinoa',
+Product.create!( tittle:                   'Quinoa',
                 description:              'Suplemento alimenticio',
-                image_url:                'Quinoa.png',
+                image_url:                File.open(File.join(Rails.root, "/public/uploads/product/image_url/1/Quinoa.png")),
                 laboratory:               'Some',
                 price:                    120.30,
                 presentation:             'Grano entero de quinoa blanca. Bolsa con 300g',
@@ -19,9 +19,9 @@ Es libre de gluten y fácil de digerir
 Rica en vitaminas del complejo B, vitamina C, E, tiamina, rivoflavina
 Alto contenido de minerales, como fósforo, potasio, magnesio y calcio entre otros")
 
-Product.create( tittle:                   'Linaza Golden',
+Product.create!( tittle:                   'Linaza Golden',
                 description:              'Aceite para cocinar',
-                image_url:                'LinazaGolden.png',
+                image_url:                File.open(File.join(Rails.root, "/public/uploads/product/image_url/2/LinazaGolden.png")),
                 laboratory:               'Some',
                 price:                    120.30,
                 presentation:             "Frasco con 440g. Ingredientes: Linaza canadiense molida de origen (LinumUsitatissimum)",
@@ -29,18 +29,18 @@ Product.create( tittle:                   'Linaza Golden',
                 properties:               "Linaza Golden de Canadá es rica en fibra y aceites esenciales Omega 3 y Omega 6, pero además tiene vitamina E, fibra e incluso enzimas digestivas.
 Semilla llena de propiedades que benefician la salud y que ayudan a regular el peso y el tránsito intestinal.")
 
-Product.create( tittle:                   'TonoSvelt',
+Product.create!( tittle:                   'TonoSvelt',
                 description:              'Suplemento alimenticio',
-                image_url:                'TonoSvelt.png',
+                image_url:                File.open(File.join(Rails.root, "/public/uploads/product/image_url/3/TonoSvelt.png")),
                 laboratory:               'Some',
                 price:                    120.30,
                 presentation:             "Bote con 450g. Ingredientes: Salvado de Trigo (TriticumAestivum), Semilla de Chia (Salvia Hispanica), Semilla de Linaza (LinumUsitatissimum), Ácido Cítrico, Stevia (SteviaRebaudiana) y Piña como saborizante",
                 indication:               "Para pacientes que requieren mejorar su tránsito intestinal. Forma de uso:  Mezclar 2 cucharadas soperas copeteadas en un vaso (240ml) con agua o en el jugo de su preferencia, agitar vigorosamente. Consumir 1 o 2 veces al día",
                 properties:               "Salvado de Trigo, Semilla de Chia, Semilla de Linaza, y delicioso sabor a Piña")
 
-Product.create( tittle:                   'Fresubin Plus (Hipercalórica)',
+Product.create!( tittle:                   'Fresubin Plus (Hipercalórica)',
                 description:              'Suplemento alimenticio',
-                image_url:                'FresubinPlus.png',
+                image_url:                File.open(File.join(Rails.root, "/app/assets/images/FresubinPlus.png")),
                 laboratory:               'Some',
                 price:                    120.30,
                 presentation:             "Lata de 236ml 350kcal (1.5kcal/ml).Sabores: Fresa, Vainilla y Chocolate. Hidratos de Carbono: 49.26g  (56.3%). Proteínas: 12.86g (14.7%).Lípidos: 11.28g(29%)Reducido en sodio (170 mg). Sodio 139.4 mg . Potasio 328.6 mg",

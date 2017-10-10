@@ -37,10 +37,11 @@
             <li><%= link_to 'Ordenes',    orders_path   %></li>
             <li><%= link_to 'Productos',  products_path %></li>
             <li><%= link_to 'Usuarios',   users_path    %></li>
+            <li><%= link_to 'Contenido',   posts_path    %></li>
           </ul>
           <%= button_to 'Terminar sesión', logout_path, method: :delete %>
         <% else %>
-          <%= button_to 'Iniciar sesión', login_path %>
+          <%= link_to(image_tag("TardisIcon.png", size: "50", alt: 'Iniciar Sesión'), login_path, id: "tardis") %>
         <% end %>
 
       </div>

@@ -20,7 +20,7 @@ body, body > p, body > ol, body > ul, body > td { margin: 8px !important}
   min-height: 40px;
   background: #e0ff99;
   padding: 10px;
-  border-bottom: 2px solid;
+  /* border-bottom: 2px solid; */
   font: small-caps 40px/40px "Times New Roman", serif;
   color: #a1e600;
   text-align: left;
@@ -90,6 +90,23 @@ body, body > p, body > ol, body > ul, body > td { margin: 8px !important}
           color: #cc7400;
           font-size: small;
         }
+      }
+    }
+
+    #tardis {
+      a:link {
+        color: red;
+      }
+
+      a:visited {
+        color: green;
+      }
+
+      a:hover {
+        color: #ffdeb3;
+        background-color: #ffdeb3;
+        text-decoration: none;
+        display: block;
       }
     }
   }

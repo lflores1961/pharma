@@ -6,10 +6,15 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     @update  = {
       tittle:      'Lorem Ipsum',
       description: 'Anti Chicharrón',
-      image_url:   'chicharron.jpg',
+      # image_url: "#{File.open(File.join(Rails.root, '/test/fixtures/Quinoa.png'))}",
+      image_url:   Rack::Test::UploadedFile.new(File.join(Rails.root, '/test/fixtures/Quinoa.png'), "image/png"),
+      presentation: 'presentacion',
+      indication:  'Indicaciones',
+      properties:  'Propiedades',
       laboratory:  'Cazuela',
       price:       19.95
     }
+
   end
 
   test "should get index" do
