@@ -19,7 +19,7 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 # Use The following 3 gems for image management
-gem 'carrierwave', '1.1.0'
+gem 'carrierwave', '1.2.0'
 gem 'mini_magick', '4.7.0'
 gem 'fog',         '1.40.0'
 # Use jquery as the JavaScript library
