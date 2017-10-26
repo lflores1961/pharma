@@ -45,9 +45,9 @@ class ProductsController < ApplicationController
         format.html { redirect_to @product, notice: 'Se actualizó exitosamente el producto.' }
         format.json { render :show, status: :ok, location: @product }
 
-        @products = Product.all
-        ActionCable.server.broadcast 'products',
-          html: render_to_string('store/index', layout: false)
+        # @products = Product.all
+        # ActionCable.server.broadcast 'products',
+          # html: render_to_string('store/index', layout: false)
       else
         format.html { render :edit }
         format.json { render json: @product.errors, status: :unprocessable_entity }
