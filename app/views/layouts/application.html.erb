@@ -11,7 +11,7 @@
 
   <body class='<%= controller.controller_name %>'>
     <div id="banner">
-      <%= image_tag 'logoPharma.png', size: "130x65", alt: 'Nutri Pharma' %>
+      <%= link_to image_tag('logoPharma.png', size: "130x65", alt: 'Farmacia Zi'), inicio_path %>
       <span class="title"><%= @page_title %></span>
     </div>
     <div id="columns">
@@ -25,10 +25,8 @@
         </div>
 
         <ul>
-          <li><%= link_to 'Inicio', store_index_path %></li>
-          <li><a href="#">Preguntas frecuentes</a></li>
-          <li><a href="#">Noticias</a></li>
-          <li><a href="#">Contacto</a></li>
+          <li><%= link_to 'Tienda', store_path %></li>
+          <li><%= link_to 'Contacto', contacto_path %></li>
         </ul>
 
         <% if session[:user_id] %>
@@ -41,7 +39,7 @@
           </ul>
           <%= button_to 'Terminar sesión', logout_path, method: :delete %>
         <% else %>
-          <%= link_to(image_tag("TardisIcon.png", size: "50", alt: 'Iniciar Sesión'), login_path, id: "tardis") %>
+          <%= link_to image_tag("TardisIcon.png", size: "50", alt: 'Iniciar Sesión'), login_path, id: "tardis" %>
         <% end %>
 
       </div>

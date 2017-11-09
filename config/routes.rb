@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  # get 'static_pages/inicio', as: :inicio
+  root 'static_pages#inicio', as: 'inicio'
+
+  get 'static_pages/productos', as: :productos
+
+  get 'static_pages/contacto', as: :contacto
+
+
   resources :posts
   get 'admin' => 'admin#index'
 
@@ -12,7 +20,9 @@ Rails.application.routes.draw do
   resources :orders
   resources :line_items
   resources :carts
-  root 'store#index', as: 'store_index'
+  get 'store' => 'store#index'
+
+  # root 'store#index', as: 'store_index'
 
   resources :products do
     get :who_bought, on: :member

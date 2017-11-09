@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   skip_before_action :authorize, only: [:new, :create]
   include CurrentCart
-  before_action :set_cart, only: [:new, :create]
+  before_action :set_cart, only: [:show, :new, :create]
   before_action :ensure_cart_isnt_empty, only: :new
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
@@ -36,7 +36,7 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         OrderMailer.received(@order).deliver_later
-        format.html { redirect_to store_index_url, notice: 'Gracias por su orden.' }
+        format.html { redirect_to store_url, notice: 'Gracias por su orden.' }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
@@ -83,7 +83,7 @@ class OrdersController < ApplicationController
 
     def ensure_cart_isnt_empty
       if @cart.line_items.empty?
-        redirect_to store_index_url, notice: 'Su canasta de compra está vacía'
+        redirect_to store_url, notice: 'Su canasta de compra está vacía'
       end
       #code
     end

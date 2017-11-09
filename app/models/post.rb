@@ -4,6 +4,14 @@ class Post < ApplicationRecord
   validates :content, presence: true
   validate :picture_size
 
+  def self.head
+    Post.first
+  end
+
+  def self.tail
+    Post.last(Post.count - 1)
+  end
+
   private
 
     # Validates the size of an uploaded file

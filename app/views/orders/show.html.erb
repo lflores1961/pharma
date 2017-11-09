@@ -1,33 +1,52 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @order.name %>
-</p>
-
-<p>
-  <strong>Dirección:</strong>
-  <%= @order.address %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @order.email %>
-</p>
-
-<p>
-  <strong>Tipo de pago:</strong>
-  <%= @order.pay_type %>
-</p>
-
-<p>
-  <strong>Fecha de Envío:</strong>
-  <% if @order.ship_date %>
-    <%= @order.ship_date %>
-  <% else %>
-    No enviado
-  <% end %>
-</p>
+<h3>Pedido #: <%= @order.id %></h3>
+  <section>
+    <table>
+      <tr>
+        <td><strong>Fecha:</strong></td>
+        <td><%= @order.created_at.to_date %></td>
+      </tr>
+      <tr>
+        <td><strong>Nombre:</strong></td>
+        <td><%= @order.name %></td>
+      </tr>
+      <tr>
+        <td><strong>Dirección:</strong></td>
+        <td><%= @order.address %></td>
+      </tr>
+      <tr>
+        <td><strong>Email:</strong></td>
+        <td><%= @order.email %></td>
+      </tr>
+      <tr>
+        <td><strong>Tipo de pago:</strong></td>
+        <td><%= @order.pay_type %></td>
+      </tr>
+      <tr>
+        <td><strong>Fecha de Envío:</strong></td>
+        <td>
+          <% if @order.ship_date %>
+            <%= @order.ship_date %>
+          <% else %>
+            No enviado
+          <% end %>
+        </td>
+      </tr>
+    </table>
+  </section>
+____________________________________________
+<table>
+  <tr>
+    <th>Cant.</th><th>Descripción</th><th>Precio</th>
+  </tr>
+  <%= render 'line_items/mail_line_items' %>
+  <tr>
+    <th colspan="2">Total:</th>
+    <th><%= number_to_currency(@order.total_price) %></th>
+  </tr>
+</table>
+____________________________________________
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>

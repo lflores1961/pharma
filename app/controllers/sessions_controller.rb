@@ -16,6 +16,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to store_index_url, notice: "Sesión terminada"
+    redirect_to inicio_url, notice: "Sesión terminada"
   end
 end

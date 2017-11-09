@@ -13,7 +13,7 @@ class UserStoriesTest < ActionDispatch::IntegrationTest
     prod_test = products(:complan)
 
     # A user goes to the store page
-    get '/'
+    get '/store'
     assert_response :success
     assert_select 'h1', "Catálogo de productos"
 
