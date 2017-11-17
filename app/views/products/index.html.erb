@@ -1,9 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Products</h1>
+<h1>Productos</h1>
 
 <table>
-<% @products.each do |product| %>
+<% @products.group_by(&:catalogo_id).each do |catalog, productos| %>
+  <tr class="catalogo">
+    <td colspan="3"><h3><%= Catalogo.find(catalog).tipo_prod %></h3></td>
+  </tr>
+
+  <% productos.each do |product| %>
+
   <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
 
     <td>
@@ -14,6 +20,9 @@
       <dl>
         <dt><%= product.tittle %></dt>
         <dd><%= truncate(strip_tags(product.description), length: 80) %></dd>
+        <dd><%= truncate(strip_tags(product.presentation), length: 80) %></dd>
+        <dd><%= product.laboratory %></dd>
+        <dd><%= product.safety_catalog == 0 ? "No definido" : Catalogo.find(product.safety_catalog).tipo_prod %></dd>
       </dl>
     </td>
 
@@ -22,6 +31,8 @@
       <%= link_to 'Edit', edit_product_path(product) %><br/>
       <%= link_to 'Destroy', product, method: :delete, data: { confirm: '¿Esta seguro de eliminar el producto?' } %>
     </td>
+  <% end %>
+
   </tr>
 <% end %>
 </table>

@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170912190605) do
+ActiveRecord::Schema.define(version: 20171117224151) do
 
   create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "catalogos", force: :cascade do |t|
+    t.string   "tipo_prod"
+    t.integer  "descuento"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -54,12 +61,15 @@ ActiveRecord::Schema.define(version: 20170912190605) do
     t.text     "description"
     t.string   "image_url"
     t.string   "laboratory"
-    t.decimal  "price",        precision: 10, scale: 2
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.decimal  "price",             precision: 10, scale: 2
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.text     "presentation"
     t.text     "indication"
     t.text     "properties"
+    t.integer  "catalogo_id"
+    t.string   "tabla_nutricional"
+    t.index ["catalogo_id"], name: "index_products_on_catalogo_id"
   end
 
   create_table "users", force: :cascade do |t|

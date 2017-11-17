@@ -8,6 +8,11 @@ class Product < ApplicationRecord
   validates :tittle, uniqueness: true
   validate :image_size
 
+  # Avoid errors trying to render empty values
+  def safety_catalog
+    catalogo_id.nil? ? 0 : catalogo_id
+  end
+
   private
 
     # Ensure there are no 'live' line items referencing this product

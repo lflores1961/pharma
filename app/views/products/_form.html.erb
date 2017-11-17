@@ -25,6 +25,11 @@
       </div>
 
       <div class="field">
+        <%= f.label :catalogo, 'Catálogo' %>
+        <%= f.collection_select :catalogo_id, Catalogo.all, :id, :tipo_prod %>
+      </div>
+
+      <div class="field">
         <%= f.label :presentation, 'Presentación' %>
         <%= f.text_area :presentation, rows: 4, cols: 40 %>
       </div>

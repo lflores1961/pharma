@@ -1,7 +1,7 @@
-// Place all the styles related to the Products controller here.
+// Place all the styles related to the Catalogos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.products {
+.catalogos {
   table {
     border-collapse: collapse;
   }
@@ -11,18 +11,13 @@
     vertical-align: top;
   }
 
-  tr.catalogo {
-    background-color: #f0f5f5;
-    color: #00b38f;
-  }
-
   .list_image {
     width: 60px;
     height: 70px;
   }
 
   .list_description {
-    width: 80%;
+    width: 60%;
 
     dl {
       margin: 0;
@@ -35,7 +30,7 @@
     }
 
     dd {
-      margin: 1px;
+      margin: 0;
     }
   }
 

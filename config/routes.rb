@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :catalogos
   # get 'static_pages/inicio', as: :inicio
   root 'static_pages#inicio', as: 'inicio'
 

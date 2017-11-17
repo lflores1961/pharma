@@ -1,0 +1,27 @@
+<%= form_for(catalogo) do |f| %>
+  <% if catalogo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(catalogo.errors.count, "error") %> prohibited this catalogo from being saved:</h2>
+
+      <ul>
+      <% catalogo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tipo_prod %>
+    <%= f.text_field :tipo_prod %>
+  </div>
+
+  <div class="field">
+    <%= f.label :descuento %>
+    <%= f.number_field :descuento %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

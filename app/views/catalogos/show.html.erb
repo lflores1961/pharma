@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo prod:</strong>
+  <%= @catalogo.tipo_prod %>
+</p>
+
+<p>
+  <strong>Descuento:</strong>
+  <%= @catalogo.descuento %>
+</p>
+
+<%= link_to 'Edit', edit_catalogo_path(@catalogo) %> |
+<%= link_to 'Back', catalogos_path %>

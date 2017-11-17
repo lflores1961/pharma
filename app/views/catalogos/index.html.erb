@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Catalogos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tipo prod</th>
+      <th>Descuento</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @catalogos.each do |catalogo| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <td><%= catalogo.tipo_prod %></td>
+        <td><%= catalogo.descuento %></td>
+        <td><%= link_to 'Show', catalogo %></td>
+        <td><%= link_to 'Edit', edit_catalogo_path(catalogo) %></td>
+        <td><%= link_to 'Destroy', catalogo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Catalogo', new_catalogo_path %>
