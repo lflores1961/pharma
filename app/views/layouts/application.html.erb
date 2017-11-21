@@ -40,7 +40,7 @@
           </ul>
           <%= button_to 'Terminar sesión', logout_path, method: :delete %>
         <% else %>
-          <%= link_to image_tag("TardisIcon.png", size: "50", alt: 'Iniciar Sesión'), login_path, id: "tardis" %>
+          <%= link_to image_tag("TardisIcon.png", alt: ''), login_path, id: "tardis" %>
         <% end %>
 
       </div>
