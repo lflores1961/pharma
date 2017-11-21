@@ -1,9 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+alimentos:
+  id: 1
+  tipo_prod: Alimentos
+  descuento: 0
 
-one:
-  tipo_prod: MyString
-  descuento: 1
+medicinas:
+  id: 2
+  tipo_prod: Medicina
+  descuento: 0
 
-two:
-  tipo_prod: MyString
-  descuento: 1
+suplementos:
+  id: 3
+  tipo_prod: Suplementos
+  descuento: 0

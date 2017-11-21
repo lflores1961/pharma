@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CatalogosControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @catalogo = catalogos(:one)
+    @catalogo = catalogos(:alimentos)
   end
 
   test "should get index" do

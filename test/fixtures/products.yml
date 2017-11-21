@@ -9,6 +9,8 @@ one:
   image_url: File.open(File.join(Rails.root, '/public/uploads/product/image_url/1/Quinoa.png'))
   laboratory: MyString
   price: 9.99
+  catalogo_id: 1
+  tabla_nutricional: "No hay"
 
 two:
   tittle: Beta
@@ -19,6 +21,8 @@ two:
   image_url: File.open(File.join(Rails.root, '/public/uploads/product/image_url/1/Quinoa.png'))
   laboratory: MyString
   price: 9.99
+  catalogo_id: 2
+  tabla_nutricional: "No hay"
 
 complan:
   tittle: Complan
@@ -32,3 +36,5 @@ complan:
   image_url: File.open(File.join(Rails.root, '/public/uploads/product/image_url/1/Quinoa.png'))
   laboratory: NutriO
   price: 178.30
+  catalogo_id: 3
+  tabla_nutricional: "No hay"

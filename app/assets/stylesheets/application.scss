@@ -93,18 +93,19 @@ body, body > p, body > ol, body > ul, body > td { margin: 8px !important}
       }
     }
 
-    #tardis {
-      a:link {
-        color: red;
+    a#tardis {
+
+      :hover {
+        text-decoration: none;
+        display: block;
+      }
+      
+      img {
+        width: 30px;
+        height: 30px;
       }
 
-      a:visited {
-        color: green;
-      }
-
-      a:hover {
-        color: #ffdeb3;
-        background-color: #ffdeb3;
+      img:hover {
         text-decoration: none;
         display: block;
       }
