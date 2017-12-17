@@ -40,5 +40,5 @@ Product.create!( tittle:                  'Ensure',
 
 Post.create!(title:                       'Primer Post',
               tipo_post:                  'Informacion',
-              content:                    'Los artículos se deben clasificar según el tipo de Post: Información, Advertencia, Recomendación, etc.',
-              picture:                    File.open(File.join(Rails.root,"/public/uploads/post/picture/1/tarjeta.jpg")))
+              content:                    'Los artículos se deben clasificar según el tipo de Post: Información, Advertencia, Recomendación, etc. Esta app está en desarrollo',
+              picture:                    File.open(File.join(Rails.root,"/app/assets/images/tarjeta.jpg")))
