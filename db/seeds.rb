@@ -41,7 +41,7 @@ Es libre de gluten y fácil de digerir
 Rica en vitaminas del complejo B, vitamina C, E, tiamina, rivoflavina
 Alto contenido de minerales, como fósforo, potasio, magnesio y calcio entre otros",
                 catalogo_id:              Catalogo.first.id,
-                tabla_nutricional:        "Pendiente")
+                tabla_nutricional:        File.open(File.join(Rails.root, "/public/uploads/product/tabla_nutricional/1/tabla_n_.jpg")))
 
 Product.create!( tittle:                  'Linaza Golden',
                   description:            'Linaza Canadiense para cocinar',
@@ -53,7 +53,7 @@ Product.create!( tittle:                  'Linaza Golden',
                   properties:             'Linaza Golden de Canadá es rica en fibra y aceites esenciales Omega 3 y Omega 6, pero además tiene vitamina E, fibra e incluso enzimas digestivas.
 Semilla llena de propiedades que benefician la salud y que ayudan a regular el peso y el tránsito intestinal.',
                   catalogo_id:            Catalogo.first.id,
-                  tabla_nutricional:      'Pendiente')
+                  tabla_nutricional:      File.open(File.join(Rails.root, "/public/uploads/product/tabla_nutricional/2/tabla_n_.jpg")))
 
 Product.create!( tittle:                  'Multi Fibras TonoSvelt',
                   description:            'Salvado de semillas con savor',
@@ -66,7 +66,7 @@ Forma de uso:  Mezclar 2 cucharadas soperas copeteadas en un vaso (240ml) con ag
 Consumir 1 o 2 veces al día',
                   properties:             'Salvado de Trigo, Semilla de Chia, Semilla de Linaza, y delicioso sabor a Piña',
                   catalogo_id:            Catalogo.first.id,
-                  tabla_nutricional:      'Pendiente')
+                  tabla_nutricional:      File.open(File.join(Rails.root, "/public/uploads/product/tabla_nutricional/3/tabla_n_.jpg")))
 
 Product.create!( tittle:                  'FRESUBIN PLUS  (Hipercalórica)',
                   description:            'Complemento alimenticio',
@@ -80,7 +80,7 @@ Problemas gastrointestinales Puede consumir de 1 a 2.5 latas o de acuerdo a la p
 Vía de alimentación oral o por sonda. No para uso parenteral.',
                   properties:             'Fórmula polimérica hipercalórica. Bajo en sodio, libre de lactosa, gluten y colesterol ',
                   catalogo_id:            Catalogo.find_by!(tipo_prod: 'FÓRMULAS POLIMÉRICAS ESTANDAR LÍQUIDAS').id,
-                  tabla_nutricional:      'Pendiente')
+                  tabla_nutricional:      File.open(File.join(Rails.root, "/public/uploads/product/tabla_nutricional/4/tabla_n_.jpg")))
 
 Product.create!( tittle:                  'Complan Leveled',
                   description:            'Suplemento alimenticio',
@@ -91,18 +91,18 @@ Product.create!( tittle:                  'Complan Leveled',
                   indication:             'Tomar acompañado de alimentos ligeros en el desayuno y la cena',
                   properties:             'Proteínas, minerals y vitaminas',
                   catalogo_id:            Catalogo.find_by!(tipo_prod: 'FÓRMULAS POLIMÉRICAS ESTANDAR EN POLVO').id,
-                  tabla_nutricional:      'Pendiente')
+                  tabla_nutricional:      File.open(File.join(Rails.root, "/public/uploads/product/tabla_nutricional/5/tabla_n_.jpg")))
 
 Product.create!( tittle:                  'Ensure',
                   description:            'Complemento alimenticio rico en proteína',
-                  image_url:              File.open(File.join(Rails.root, "/public/uploads/product/image_url/6/Ensure.png")),
+                  image_url:              File.open(File.join(Rails.root, "/public/uploads/product/image_url/6/Ensure_Advance_Polvo.png")),
                   laboratory:             'SOme Lab',
                   price:                  133.40,
                   presentation:           'Botellitas de 1/4 de litro en chocolate, vainilla y fresa',
                   indication:             'tómelo acompañando el desayuno y como sustituto de la cena',
                   properties:             'Proteína, vitaminas, etc.',
                   catalogo_id:            Catalogo.find_by!(tipo_prod: 'FÓRMULAS POLIMÉRICAS ESPECIALIZADAS LÍQUIDAS').id,
-                  tabla_nutricional:      'Pendiente')
+                  tabla_nutricional:      File.open(File.join(Rails.root, "/public/uploads/product/tabla_nutricional/6/tabla_n_.jpg")))
 
 Post.create!(title:                       'Primer Post',
               tipo_post:                  'Informacion',

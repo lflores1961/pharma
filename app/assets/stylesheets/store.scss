@@ -165,15 +165,16 @@
 
 /* The Close Button */
 .close {
-    color: #aaaaaa;
+    color: #ffffff;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    margin-right: 20px;
 }
 
 .close:hover,
 .close:focus {
-    color: #fff;
+    color: #ff944d;
     text-decoration: none;
     cursor: pointer;
 }
