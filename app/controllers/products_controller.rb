@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authorize, only: :tabla_nut
+  before_action :set_product, only: [:show, :edit, :update, :destroy, :tabla_nut]
 
   # GET /products
   # GET /products.json
@@ -73,6 +74,14 @@ class ProductsController < ApplicationController
         format.atom
         format.html
       end
+    end
+  end
+
+  def tabla_nut
+    respond_to do |format|
+      format.html {}
+      format.js
+      format.json { render json: @product }
     end
   end
 

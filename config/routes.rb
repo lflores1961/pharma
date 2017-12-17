@@ -29,5 +29,7 @@ Rails.application.routes.draw do
     get :who_bought, on: :member
   end
 
+  get 'tabla_nut/:id' => 'products#tabla_nut', as: 'tabla_nut'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -23,6 +23,7 @@
               <%= sanitize(product.indication) %>
               <h4>Propiedades:</h4>
               <%= sanitize(product.properties) %>
+              <%= button_to 'Tabla Nutricia', tabla_nut_path(product.id), method: :get, form_class: "myButn", remote: true %>
             </div>
             <div class="columna par-precio-botones">
               <div class="price_line">
@@ -36,3 +37,6 @@
       <% end %>
     </div>
   <% end %>
+  <div class="lugar">
+
+  </div>
