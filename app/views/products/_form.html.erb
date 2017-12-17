@@ -55,6 +55,11 @@
       </div>
 
       <div class="field">
+        <%= f.label :tabla_nutricional %>
+        <%= f.file_field :tabla_nutricional, accept: 'image/jpeg,image/gif,image/png' %>
+      </div>
+
+      <div class="field">
         <%= f.label :price, 'Precio al público' %>
         <%= f.text_field :price %>
       </div>

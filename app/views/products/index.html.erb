@@ -22,7 +22,9 @@
         <dd><%= truncate(strip_tags(product.description), length: 80) %></dd>
         <dd><%= truncate(strip_tags(product.presentation), length: 80) %></dd>
         <dd><%= product.laboratory %></dd>
-        <dd><%= product.safety_catalog == 0 ? "No definido" : Catalogo.find(product.safety_catalog).tipo_prod %></dd>
+
+        <!--<dd><%= button_tag("Tabla Nutricia", type: 'button', id: "myButn") %></dd> -->
+        <%= button_to 'Tabla Nutricia', tabla_nut_path(product.id), method: :get, form_class: "myButn", remote: true %>
       </dl>
     </td>
 
@@ -36,7 +38,9 @@
   </tr>
 <% end %>
 </table>
+<div class="lugar">
 
+</div>
 <br>
 
 <%= link_to 'New Product', new_product_path, class: "btn" %>
