@@ -28,6 +28,20 @@
           <li><%= link_to 'Tienda', store_path %></li>
           <li><%= link_to 'Contacto', contacto_path %></li>
         </ul>
+        <section class="bmi-detalle">
+          <h5>Conozca su IMC</h5>
+          <p>El IMC proporciona la medida más útil del sobrepeso y la obesidad en la población, pues es la misma para ambos sexos y para los adultos de todas las edades. Sin embargo, hay que considerarla como un valor aproximado porque puede no corresponderse con el mismo nivel de grosor en diferentes personas.</p>
+        </section>
+        <%= image_tag "imc.png", id: "calculator-img" %>
+        <section class="bmi-form">
+          <%= render 'body_mass_index/bmi_form' %>
+        </section>
+        <section id="bmi-result"> </section>
+        <section id="bmi-bmi"> </section>
+        <div id="bmi-leyend">
+          <%= image_tag "IMCcuadro.jpg", size: "200x130" %>
+        </div>
+
 
         <% if session[:user_id] %>
           <p><%= User.find(session[:user_id]).email %></p>
@@ -40,7 +54,9 @@
           </ul>
           <%= button_to 'Terminar sesión', logout_path, method: :delete %>
         <% else %>
-          <%= link_to image_tag("TardisIcon.png", alt: ''), login_path, id: "tardis" %>
+          <section>
+            <%= link_to image_tag("TardisIcon.png", alt: ''), login_path, id: "tardis" %>
+          </section>
         <% end %>
 
       </div>
@@ -48,5 +64,6 @@
         <%= yield %>
       </div>
     </div>
+    <%= debug(params) if Rails.env.development? %>
   </body>
 </html>

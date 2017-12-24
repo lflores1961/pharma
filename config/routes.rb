@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'body_mass_index/calculator'
+
   resources :catalogos
   # get 'static_pages/inicio', as: :inicio
   root 'static_pages#inicio', as: 'inicio'

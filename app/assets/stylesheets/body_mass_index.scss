@@ -1,0 +1,65 @@
+// Place all the styles related to the BodyMassIndex controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@mixin box-sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.bmi-form {
+  overflow: auto;
+  vertical-align: top;
+  @include box-sizing;
+  .form-control {
+    padding: 5px;
+    margin: 2px;
+  }
+  .form-submit {
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+}
+
+.bmi-detalle {
+  p {
+    margin-left: 1px;
+    margin-top: 2px;
+    width: 180px;
+    font-family: verdana;
+    font-size: 60%;
+    text-align: left;
+  }
+
+  h5 {
+    margin: 3px;
+    color: #1ab2ff;
+  }
+}
+
+#calculator-img {
+  width: 50px;
+  height: 50px;
+  padding-left: 60px;
+  padding-bottom: 10px;
+  vertical-align: top;
+  align-self: center;
+}
+
+#bmi-result {
+  font-size: 1em;
+  color: #008000;
+}
+
+#bmi-bmi {
+  font-size: .8em;
+  color: #808080;
+}
+
+#bmi-leyend {
+  img {
+    width: 220px;
+    height: 160px;
+  }
+}
