@@ -10,4 +10,30 @@
     font-weight: bold;
     border-top: 1px solid #cc7400;
   }
+
+  tbody.form.tr.td.form {
+    input {
+      background-color: #ffcc99;
+      color: #009900;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      width: 20px;
+    }
+
+    input:hover {
+      background-color: #fff2e6;
+    }
+
+  }
+
+  form.boton_carro {
+    input {
+      background-color: #ffcc99;
+      color: #009900;
+      border-radius: 6px;
+      font-size: 12px;
+    }
+  }
+
 }

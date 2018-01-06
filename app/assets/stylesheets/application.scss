@@ -77,6 +77,35 @@ body, body > p, body > ol, body > ul, body > td { margin: 8px !important}
         border-top: 1px dotted #cc7400;
         border-bottom: 1px dotted #cc7400;
         margin-bottom: 10px;
+
+        form.button_to {
+          input {
+            background-color: #ffcc99;
+            color: #009900;
+            border-radius: 6px;
+            font-size: 8px;
+            width: 30px;
+          }
+
+          input:hover {
+            background-color: #fff2e6;
+          }
+        }
+      }
+    }
+
+    form.button_to {
+      input {
+        background-color: #ffcc99;
+        color: #009900;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: bold;
+        width: 150px;
+      }
+
+      input:hover {
+        background-color: #fff2e6;
       }
     }
 
@@ -85,10 +114,12 @@ body, body > p, body > ol, body > ul, body > td { margin: 8px !important}
 
       li {
         list-style: none;
+        padding: 3px;
 
         a {
           color: #cc7400;
-          font-size: small;
+          font-size: 16px;
+          font-weight: bold;
         }
       }
     }

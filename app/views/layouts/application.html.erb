@@ -25,12 +25,13 @@
         </div>
 
         <ul>
-          <li><%= link_to 'Tienda', store_path %></li>
-          <li><%= link_to 'Contacto', contacto_path %></li>
+          <li><%= button_to 'Tienda', store_path, method: :get %></li>
+          <li><%= button_to 'Contacto', contacto_path, method: :get %></li>
         </ul>
         <section class="bmi-detalle">
-          <h5>Conozca su IMC</h5>
+          <h5>Indice de Masa Corporal (IMC)</h5>
           <p>El IMC proporciona la medida más útil del sobrepeso y la obesidad en la población, pues es la misma para ambos sexos y para los adultos de todas las edades. Sin embargo, hay que considerarla como un valor aproximado porque puede no corresponderse con el mismo nivel de grosor en diferentes personas.</p>
+          <h6>Conozca su IMC</h6>
         </section>
         <%= image_tag "imc.png", id: "calculator-img" %>
         <section class="bmi-form">

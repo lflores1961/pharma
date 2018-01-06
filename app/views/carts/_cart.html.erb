@@ -11,10 +11,10 @@
 </table>
 
 <% unless @hide_checkout_button == true %>
-  <%= button_to 'Pasar a la caja', new_order_path, method: :get %>
+  <%= button_to 'Pasar a la caja', new_order_path, method: :get, form_class: "boton_carro" %>
 <% end %>
 
 <%= button_to 'Vaciar la canasta', cart, method: :delete,
-              data: {confirm: '¿Está seguro(a)?' } %>
+              data: {confirm: '¿Está seguro(a)?' }, form_class: "boton_carro" %>
 
 <% end %>

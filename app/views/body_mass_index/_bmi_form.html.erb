@@ -1,9 +1,9 @@
 
   <%= form_tag body_mass_index_calculator_path, method: "get", remote: true, class: "navbar-left", id: "bmi_form" do %>
-    <%= label_tag :mass, "Su peso en Kg" %>
+    <%= label_tag :mass, "Su peso en Kg:" %>
     <%= number_field_tag :mass, params[:mass], step: 0.01, class: "form-control" %>
 
-    <%= label_tag :height, "Su estatura en metros" %>
+    <%= label_tag :height, "Su estatura en metros:" %>
     <%= number_field_tag :height, params[:height], step: 0.01, class: "form-control" %>
 
     <br><%= submit_tag "Calcular IMC", class: "form-submit" %>
