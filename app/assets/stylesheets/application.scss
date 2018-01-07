@@ -204,3 +204,31 @@ body, body > p, body > ol, body > ul, body > td { margin: 8px !important}
     }
   }
 }
+
+.footer {
+  float: left;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  padding: 3px;
+  border-top: 1px solid #f2f2f2;
+  margin: 13px 0px;
+
+  img {
+    padding-right: 10px;
+    float: right;
+    width: 120px;
+  }
+
+  small {
+    display: inline;
+    float: left;
+    color: #00b386;
+  }
+
+}
+
+.debug {
+  float: left;
+  width: 100%;
+}
