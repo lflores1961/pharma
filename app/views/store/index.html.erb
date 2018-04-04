@@ -6,6 +6,8 @@
   <% @products.group_by(&:catalogo_id).each do |catalog, productos| %>
     <button class="accordion">
       <h3><%= Catalogo.find(catalog).tipo_prod %></h3>
+      <%= image_tag(productos.first.image_url, size: "30x50" ) %>
+      <%= image_tag(productos.last.image_url, size: "20x40" ) %>
     </button>
     <div class="panel">
       <% productos.each do |product| %>

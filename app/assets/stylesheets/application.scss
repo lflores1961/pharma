@@ -19,7 +19,7 @@ body, body > p, body > ol, body > ul, body > td { margin: 8px !important}
 #banner {
   position: relative;
   min-height: 40px;
-  background: #f7ffe6;
+  background: #8b969e;
   padding: 10px;
   /* border-bottom: 2px solid; */
   font: small-caps 40px/40px "Times New Roman", serif;
@@ -54,13 +54,13 @@ body, body > p, body > ol, body > ul, body > td { margin: 8px !important}
 
   #main {
     padding: 1em;
-    background: white;
+    background: rgb(242, 243, 170);
     flex: 1;
   }
 
   #side {
     padding: 1em 2em;
-    background-color: #fff4e6;
+    background-color: #8b969e;
 
     form, div {
       display: inline;
@@ -103,6 +103,15 @@ body, body > p, body > ol, body > ul, body > td { margin: 8px !important}
         font-size: 16px;
         font-weight: bold;
         width: 150px;
+        white-space: normal;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      #buttonTienda {
+        padding: 30px;
+        text-align: center;
+        margin-top: 30px;
       }
 
       input:hover {
@@ -223,7 +232,7 @@ body, body > p, body > ol, body > ul, body > td { margin: 8px !important}
 
   small {
     display: inline;
-    float: left;
+    /*float: left;*/
     color: #00b386;
   }
 
