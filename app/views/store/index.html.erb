@@ -30,8 +30,10 @@
             <div class="columna par-precio-botones">
               <div class="price_line">
                 <span class="price">Precio: <%= number_to_currency(product.price) %></span>
+                <!-- Disable cart untill banking is defined 
                 <%= button_to '', line_items_path(product_id: product), form_class: "carrito",
                     remote: true %>
+                -->
               </div>
             </div>
           </div>
