@@ -28,7 +28,7 @@
         <ul>
           <% letrero ="Catálogo de productos" %>
           <li><%= button_to letrero, store_path, method: :get, id: "buttonTienda" %></li>
-          <li><%= button_to 'Descargar Catálogo en PDF', 'CATALOGOZi.pdf', method: :get %></li>
+          <li><%= button_to 'Descargar Catálogo en PDF', 'assets/CATALOGOZi.pdf', method: :get %></li>
           <li><%= button_to 'Contacto', contacto_path, method: :get %></li>
         </ul>
         <section class="bmi-detalle">
@@ -46,7 +46,7 @@
           <%= image_tag "IMCcuadro.jpg", size: "200x130" %>
         </div>
         <section>
-          <span class="descarga">Descargar catálogo de productos en <%= link_to 'PDF', 'CATALOGOZi.pdf', download: '' %></span>
+          <span class="descarga">Descargar catálogo de productos en <%= link_to 'PDF', 'assets/CATALOGOZi.pdf', download: '' %></span>
         </section>
         
         <% if session[:user_id] %>
