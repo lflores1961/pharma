@@ -2,8 +2,10 @@ Rails.application.routes.draw do
   get 'body_mass_index/calculator'
 
   resources :catalogos
+
+  root 'static_pages#hogar'
   # get 'static_pages/inicio', as: :inicio
-  root 'static_pages#inicio', as: 'inicio'
+  get 'static_pages/inicio', as: 'inicio'
 
   get 'static_pages/productos', as: :productos
 

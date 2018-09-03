@@ -7,73 +7,29 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag %>
-    <script src="https://use.fontawesome.com/a2e7e016ac.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
   </head>
 
   <body class='<%= controller.controller_name %>'>
-    <div id="banner">
-      <span class="title"><%= link_to image_tag('logoPharma.png', size: "200x100", alt: 'Farmacia Zi'), inicio_path %></span>
-      <!-- <span class="descarga">Descargar catálogo de productos en <%= link_to 'PDF', 'assets/CATALOGOZi.pdf', download: '' %></span> -->
-    </div>
-    <div id="columns">
-      <div id="side">
-        <div id="cart">
-          <% if @cart %>
-            <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
-              <%= render @cart %>
-            <% end %>
-          <% end %>
-        </div>
-
-        <ul>
-          <% letrero ="Catálogo de productos" %>
-          <li><%= button_to letrero, store_path, method: :get, id: "buttonTienda" %></li>
-          <li><%= button_to 'Catálogo de productos  -  (PDF)', asset_path("CATALOGOZi.pdf"), method: :get, download: 'CATALOGOZi.pdf' %></li>
-          <li><%= button_to 'Contacto', contacto_path, method: :get %></li>
-        </ul>
-        <section class="bmi-detalle">
-          <h5>Indice de Masa Corporal (IMC)</h5>
-          <p>El IMC proporciona la medida más útil del sobrepeso y la obesidad en la población, pues es la misma para ambos sexos y para los adultos de todas las edades. Sin embargo, hay que considerarla como un valor aproximado porque puede no corresponderse con el mismo nivel de grosor en diferentes personas.</p>
-          <h6>Conozca su IMC</h6>
-        </section>
-        <%= image_tag "imc.png", id: "calculator-img" %>
-        <section class="bmi-form">
-          <%= render 'body_mass_index/bmi_form' %>
-        </section>
-        <section id="bmi-result"> </section>
-        <section id="bmi-bmi"> </section>
-        <div id="bmi-leyend">
-          <%= image_tag "IMCcuadro.jpg", size: "200x130" %>
-        </div>
-        <section>
-          <span class="descarga">Descargar catálogo de productos en <%= link_to 'PDF', asset_path("CATALOGOZi.pdf"), download: 'CATALOGOZi.pdf' %></span>
-        </section>
-
-        <% if session[:user_id] %>
-        <div><br>
-          <small>
-            Usuario: <%= User.find(session[:user_id]).email %>
-          </small>
-        </div>
-
-          <ul>
-            <li><%= link_to 'Ordenes',    orders_path   %></li>
-            <li><%= link_to 'Productos',  products_path %></li>
-            <li><%= link_to 'Usuarios',   users_path    %></li>
-            <li><%= link_to 'Contenido',   posts_path    %></li>
-            <li><%= link_to 'Catálogo',   catalogos_path    %></li>
-          </ul>
-          <%= button_to 'Terminar sesión', logout_path, method: :delete %>
-        <% else %>
-          <section>
-            <%= link_to image_tag("TardisIcon.png", alt: ''), login_path, id: "tardis" %>
-          </section>
-        <% end %>
-
-      </div>
-      <div id="main">
+    <% if controller.action_name != 'hogar' %>
+        <header id="head-noHogar">
+          <%= image_tag "logoPharma.png", size: "90x50", alt: "Zi Farmacia" %>
+        </header>
+    <% end %>
+    <div id="main">
+      <div>
         <%= yield %>
       </div>
+    </div>
+    <div class="erika">
+      <% letrero ="PRODUCTOS" %>
+      <%= button_to letrero, store_path, method: :get %>
+      <%= button_to 'CATÁLOGO', asset_path("CATALOGOZi.pdf"), method: :get, download: 'CATALOGOZi.pdf' %>
+      <%= button_to 'RECOMENDACIONES', inicio_path, method: :get %>
+      <%= button_to 'NOSOTROS', contacto_path, method: :get %>
+      <%= button_to 'INICIO', root_path, method: :get %>
     </div>
     <footer class="footer">
       <%= image_tag "logoBNR.png" %>

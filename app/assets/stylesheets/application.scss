@@ -14,7 +14,14 @@
  *= require font-awesome
  *= require_self
  */
-body, body > p, body > ol, body > ul, body > td { margin: 8px !important}
+/* body, body > p, body > ol, body > ul, body > td { margin: 8px !important} */
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 #banner {
   position: relative;
@@ -216,8 +223,8 @@ body, body > p, body > ol, body > ul, body > td { margin: 8px !important}
 }
 
 .footer {
-  float: left;
-  width: 100%;
+
+  width: auto;
   height: auto;
   background-color: white;
   padding: 3px;
@@ -231,6 +238,7 @@ body, body > p, body > ol, body > ul, body > td { margin: 8px !important}
   }
 
   small {
+    float: left;
     display: inline;
     /*float: left;*/
     color: #00b386;
@@ -270,4 +278,119 @@ span.descarga {
 .debug {
   float: left;
   width: 100%;
+}
+
+.main_window {
+  height: 800px;
+  width: 980px;
+  margin: 0;
+  padding: 0;
+  background-image: url(asset-path("basico4.png"));
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*background-clip: content-box; */
+  background-position: center;
+
+  .search-area {
+    margin: 0;
+    padding: 60px 80px;
+
+    input {
+      border-radius: 4px;
+      margin-right: 5px;
+    }
+
+    i {
+      margin-left: 5px;
+      padding: 0;
+      font-weight: 500;
+      color: #FFF8DC;
+    }
+  }
+
+  .buttons-off {
+    .grid-container {
+      display: grid;
+      grid-template-columns: 30% 30% auto;
+      padding: 50px;
+    }
+
+    .grid-item {
+      height: 400px;
+      padding: 10px;
+      display: block;
+      text-align: left;
+      ul {
+        padding-top: 50px;
+        list-style-type: none;
+      }
+
+      form.button_to {
+        input {
+          background-color: #5B6770;
+          color: white;
+          border-radius: 6px;
+          width: 270px;
+          height: 35px;
+          font-family: 'Exo', sans-serif;
+          font-size: 18px;
+          margin: 4px;
+        }
+      }
+    }
+  }
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 10% auto 10%;
+  padding: 50px;
+}
+
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.5)), url(asset-path("basico4.png"));
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 0;
+}
+
+#head-noHogar {
+  display: block;
+  float: left;
+  padding: 15px;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 10% auto 10%;
+  padding: 0 50px;
+}
+
+.main-grid-item {
+  /* height: 400px; */
+  padding: 10px;
+  display: block;
+  text-align: left;
+}
+
+.erika {
+  /* height: 400px; */
+  padding: 10px;
+  display: flex;
+  text-align: left;
+  margin-left: 80px;
+  input {
+    background-color: #5B6770;
+    display: inline-block;
+    color: white;
+    border-radius: 6px;
+    width: 150px;
+    height: 35px;
+    font-family: 'Exo', sans-serif;
+    font-size: 14px;
+    margin: 4px;
+  }
 }
