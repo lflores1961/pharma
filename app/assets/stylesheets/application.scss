@@ -140,26 +140,26 @@ body, html {
         }
       }
     }
+  }
+}
 
-    a#tardis {
+a#tardis {
 
-      :hover {
-        text-decoration: none;
-        display: block;
-      }
+  :hover {
+    text-decoration: none;
+    display: block;
+  }
 
-      img {
-        width: 30px;
-        height: 30px;
-        padding-left: 70px;
-        padding-top: 50px;
-      }
+  img {
+    width: 30px;
+    height: 30px;
+    /* padding-left: 70px;
+    padding-top: 50px; */
+  }
 
-      img:hover {
-        text-decoration: none;
-        display: block;
-      }
-    }
+  img:hover {
+    text-decoration: none;
+    display: block;
   }
 }
 
@@ -344,7 +344,7 @@ span.descarga {
 .main {
   display: grid;
   grid-template-columns: 10% auto 10%;
-  padding: 50px;
+  padding: 0 0 50px;
 }
 
 .hero-image {
@@ -363,12 +363,6 @@ span.descarga {
   padding: 15px;
 }
 
-.main-grid {
-  display: grid;
-  grid-template-columns: 10% auto 10%;
-  padding: 0 50px;
-}
-
 .main-grid-item {
   /* height: 400px; */
   padding: 10px;
@@ -378,10 +372,14 @@ span.descarga {
 
 .erika {
   /* height: 400px; */
+  overflow: hidden;
   padding: 10px;
   display: flex;
   text-align: left;
   margin-left: 80px;
+  /* Following two statements are experimental
+  position: fixed;
+  bottom: 0;*/
   input {
     background-color: #5B6770;
     display: inline-block;
@@ -393,4 +391,11 @@ span.descarga {
     font-size: 14px;
     margin: 4px;
   }
+}
+
+.no-view {
+  background: transparent;
+  border: none !important;
+  font-size: 0;
+  cursor: pointer;
 }

@@ -8,7 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" >
     <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
   </head>
 
@@ -19,20 +19,27 @@
         </header>
     <% end %>
     <div id="main">
-      <div>
+      <div class="main-grid-item"></div>
+      <div class="main-grid-item">
         <%= yield %>
+        <div class="erika">
+          <% letrero ="PRODUCTOS" %>
+          <%= button_to letrero, store_path, method: :get %>
+          <%= button_to 'CATÁLOGO', asset_path("CATALOGOZi.pdf"), method: :get, download: 'CATALOGOZi.pdf' %>
+          <%= button_to 'RECOMENDACIONES', inicio_path, method: :get %>
+          <%= button_to 'NOSOTROS', contacto_path, method: :get %>
+          <%= button_to 'INICIO', root_path, method: :get %>
+        </div>
       </div>
+      <div class="main-grid-item"></div>
+
     </div>
-    <div class="erika">
-      <% letrero ="PRODUCTOS" %>
-      <%= button_to letrero, store_path, method: :get %>
-      <%= button_to 'CATÁLOGO', asset_path("CATALOGOZi.pdf"), method: :get, download: 'CATALOGOZi.pdf' %>
-      <%= button_to 'RECOMENDACIONES', inicio_path, method: :get %>
-      <%= button_to 'NOSOTROS', contacto_path, method: :get %>
-      <%= button_to 'INICIO', root_path, method: :get %>
-    </div>
+
     <footer class="footer">
-      <%= image_tag "logoBNR.png" %>
+      <%= link_to image_tag("logoBNR.png", alt:'Login'), "https://blackneuron.herokuapp.com", target: :_blank %>
+      <section>
+            <%= link_to image_tag("TardisIcon.png", alt: ''), login_path, id: "tardis" %>
+      </section>
       <small>
         Desarrollo: fernando.flores1961@gmail.com
       </small>

@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  skip_before_action :authorize, only: :tabla_nut
+  skip_before_action :authorize, only: [:tabla_nut, :buscar]
   before_action :set_product, only: [:show, :edit, :update, :destroy, :tabla_nut]
 
   # GET /products
@@ -75,6 +75,10 @@ class ProductsController < ApplicationController
         format.html
       end
     end
+  end
+
+  def buscar
+    @products = Product.buscar(params[:search])
   end
 
   def tabla_nut

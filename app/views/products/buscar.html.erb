@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Productos</h1>
+
+<table>
+<% @products.group_by(&:catalogo_id).each do |catalog, productos| %>
+  <tr class="catalogo">
+    <td colspan="3"><h3><%= Catalogo.find(catalog).tipo_prod %></h3></td>
+  </tr>
+
+  <% productos.each do |product| %>
+
+    <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+
+      <td>
+        <%= image_tag(product.image_url, class: 'list_image') %>
+      </td>
+
+      <td class="list_description">
+        <dl>
+          <dt><%= product.tittle %></dt>
+          <dd><%= strip_tags(product.description) %></dd>
+          <dd><%= strip_tags(product.presentation) %></dd>
+          <dd><%= product.laboratory %></dd>
+          <dd><%= image_tag product.tabla_nutricional %></dd>
+          <!--<dd><%= button_tag("Tabla Nutricia", type: 'button', id: "myButn") %></dd> -->
+          <!--<%= button_to 'Tabla Nutricia', tabla_nut_path(product.id), method: :get, form_class: "myButn", remote: true %> -->
+        </dl>
+      </td>
+
+    </tr>
+  <% end %>
+<% end %>
+</table>
+<!-- <%= button_to 'Inicio', root_path, method: :get %> -->

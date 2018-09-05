@@ -14,6 +14,10 @@ class Product < ApplicationRecord
     catalogo_id.nil? ? 0 : catalogo_id
   end
 
+  def self.buscar(search)
+    where(tittle: "#{search}")
+  end
+
   private
 
     # Ensure there are no 'live' line items referencing this product

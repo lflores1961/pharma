@@ -4,3 +4,20 @@
   Son las <%= Time.now %>
     Tenemos <%= pluralize(@total_orders, 'Orden') %>
 </p>
+<!-- Add buttons to all admin actions -->
+<% if session[:user_id] %>
+  <div><br>
+    <small>
+      Usuario: <%= User.find(session[:user_id]).email %>
+    </small>
+  </div>
+
+  <ul>
+    <li><%= link_to 'Ordenes',    orders_path   %></li>
+    <li><%= link_to 'Productos',  products_path %></li>
+    <li><%= link_to 'Usuarios',   users_path    %></li>
+    <li><%= link_to 'Contenido',   posts_path    %></li>
+    <li><%= link_to 'Catálogo',   catalogos_path    %></li>
+    <li><%= link_to 'Terminar sesión', logout_path, method: :delete %></li>
+  </ul>
+<% end %>
