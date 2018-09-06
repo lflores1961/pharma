@@ -15,7 +15,7 @@ class Product < ApplicationRecord
   end
 
   def self.buscar(search)
-    where(tittle: "#{search}")
+    where("tittle LIKE ?", "%#{search}%")
   end
 
   private

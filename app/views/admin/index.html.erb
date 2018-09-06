@@ -13,11 +13,11 @@
   </div>
 
   <ul>
-    <li><%= link_to 'Ordenes',    orders_path   %></li>
-    <li><%= link_to 'Productos',  products_path %></li>
-    <li><%= link_to 'Usuarios',   users_path    %></li>
-    <li><%= link_to 'Contenido',   posts_path    %></li>
-    <li><%= link_to 'Catálogo',   catalogos_path    %></li>
-    <li><%= link_to 'Terminar sesión', logout_path, method: :delete %></li>
+    <li><%= link_to 'Ordenes',    orders_path   %><span>:   Deshabilitado hasta tener compras en línea</span> </li>
+    <li><%= link_to 'Productos',  products_path %><span>:   Gestionar registro de productos</span></li>
+    <li><%= link_to 'Usuarios',   users_path    %><span>:   Gestionar ususarios del sistema</span></li>
+    <li><%= link_to 'Contenido',   posts_path    %><span>:   Gestionar recomendaciones para visitantes</span></li>
+    <li><%= link_to 'Catálogo',   catalogos_path    %><span>:   Gestionar categorías de catálogo de productos</span></li>
+    <li><%= link_to 'Terminar sesión', logout_path, method: :delete %><span>:   Salir de la sesión de gestión del sistema</span></li>
   </ul>
 <% end %>
